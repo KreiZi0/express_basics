@@ -8,11 +8,17 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.set('view engine', 'ejs');
 
-app.get('/user/:username', (reg, res)=> {
-	let user = reg.params.username;
 
 
-	res.render('index', {username: user});
+app.get('/questions', (reg, res)=> {
+	let questions = [
+		{title: "What is Node.js?", user: "Kadi", votes: "10"},
+		{title: "What is Express.js?", user: "Mike", voes: "8"}
+	]
+
+
+
+	res.render('index', {questions:questions});
 });
 
 
